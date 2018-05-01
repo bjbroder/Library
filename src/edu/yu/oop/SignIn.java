@@ -32,6 +32,6 @@ public class SignIn {
     }
 
     public void newAcct_click(ActionEvent actionEvent) {
-        System.out.print('got here');
+        //System.out.print('got here');
     }
 }
