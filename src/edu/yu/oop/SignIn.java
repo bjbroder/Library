@@ -2,9 +2,13 @@ package edu.yu.oop;
 
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
@@ -22,16 +26,30 @@ public class SignIn {
         //if yes, go to homepage
     }
 
+    public static Stage primaryStage;
+
+    public void load() {
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+            primaryStage.setTitle("OOPS Library Application");
+            primaryStage.setScene(new Scene(root, 400, 255));
+            primaryStage.show();
+        }
+        catch (Exception e) {}
+
+    }
+
     public void hyperNewAcct(ActionEvent actionEvent){
 
-        Main.getInstance().loadNewAcctForm();
+        new NewAcctForm().load();
     }
 
     public void hyperForgotPass (ActionEvent actionEvent) {
-        Main.getInstance().loadNewAcctForm();
+        new ForgotPass().load();
     }
 
     public void newAcct_click(ActionEvent actionEvent) {
-        //System.out.print('got here');
+
     }
+
 }
