@@ -8,22 +8,22 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TitledPane id="newAcct" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="418.0" text="New Account" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-    <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="456.0">
-            <children>
-                <TextField id="firstName" fx:id="first" layoutX="27.0" layoutY="55.0" promptText="First Name" />
-                <TextField id="lastName" fx:id="last" layoutX="223.0" layoutY="55.0" promptText="Last Name" />
-                <Label layoutX="28.0" layoutY="38.0" text="First Name:" />
-                <Label layoutX="223.0" layoutY="38.0" text="Last Name:" />
-                <Label layoutX="223.0" layoutY="100.0" text="Password:" />
-                <PasswordField id="pass" fx:id="pass" layoutX="223.0" layoutY="117.0" />
-                <PasswordField id="pass2" fx:id="confPass" layoutX="223.0" layoutY="177.0" />
-                <Label layoutX="223.0" layoutY="160.0" text="Confirm Password:" />
-                <Label layoutX="28.0" layoutY="100.0" prefHeight="17.0" prefWidth="88.0" text="Email Address" />
-                <TextField id="email" fx:id="email" layoutX="27.0" layoutY="117.0" promptText="johndoe@yu.com" />
-                <Button fx:id="submit" layoutX="103.0" layoutY="177.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Submit" />
-                <Hyperlink id="back" fx:id="backToSignIn" layoutX="29.0" layoutY="178.0" text="Back" />
-            </children></AnchorPane>
-    </content>
+<TitledPane id="newAcct" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="418.0" text="New Account" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.yu.oop.NewAcctForm">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="456.0">
+         <children>
+            <TextField id="firstName" fx:id="first" layoutX="27.0" layoutY="55.0" promptText="First Name" />
+            <TextField id="lastName" fx:id="last" layoutX="223.0" layoutY="55.0" promptText="Last Name" />
+            <Label layoutX="28.0" layoutY="38.0" text="First Name:" />
+            <Label layoutX="223.0" layoutY="38.0" text="Last Name:" />
+            <Label layoutX="223.0" layoutY="100.0" text="Password:" />
+            <PasswordField id="pass" fx:id="pass" layoutX="223.0" layoutY="117.0" />
+            <PasswordField id="pass2" fx:id="confPass" layoutX="223.0" layoutY="177.0" />
+            <Label layoutX="223.0" layoutY="160.0" text="Confirm Password:" />
+            <Label layoutX="28.0" layoutY="100.0" prefHeight="17.0" prefWidth="88.0" text="Email Address" />
+            <TextField id="email" fx:id="email" layoutX="27.0" layoutY="117.0" promptText="johndoe@yu.com" />
+            <Button fx:id="submit" layoutX="103.0" layoutY="177.0" mnemonicParsing="false" onAction="#submitNewAcct_click" prefHeight="31.0" prefWidth="80.0" text="Submit" />
+            <Hyperlink id="back" fx:id="backToSignIn" layoutX="29.0" layoutY="178.0" onAction="#signIn_click" text="Back" />
+         </children></AnchorPane>
+  </content>
 </TitledPane>

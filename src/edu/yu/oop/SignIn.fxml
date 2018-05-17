@@ -10,29 +10,29 @@
 <?import javafx.scene.text.Font?>
 
 <TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="349.0" text="Sign In" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.yu.oop.SignIn">
-    <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="400.0">
-            <children>
-                <Label layoutX="86.0" layoutY="14.0" text="Welcome Back!">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Label>
-                <Label layoutX="33.0" layoutY="50.0" text="Username:">
-                    <font>
-                        <Font size="15.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="username" layoutX="126.0" layoutY="46.0" />
-                <Label layoutX="35.0" layoutY="86.0" text="Password:">
-                    <font>
-                        <Font size="15.0" />
-                    </font>
-                </Label>
-                <PasswordField fx:id="password" layoutX="126.0" layoutY="82.0" />
-                <Hyperlink id="newAcctLink" fx:id="newAcct" layoutX="33.0" layoutY="140.0" onAction="#hyperNewAcct" text="New Account" />
-                <Button id="logIn" fx:id="login" layoutX="251.0" layoutY="139.0" mnemonicParsing="false" text="Log In" />
-                <Hyperlink fx:id="forgotPass" layoutX="126.0" layoutY="113.0" onAction="#hyperForgotPass" text="Forgot password" />
-            </children></AnchorPane>
-    </content>
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="400.0">
+         <children>
+            <Label layoutX="86.0" layoutY="14.0" text="Welcome Back!">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="50.0" text="Username:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="126.0" layoutY="46.0" />
+            <Label layoutX="35.0" layoutY="86.0" text="Password:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="126.0" layoutY="82.0" />
+            <Hyperlink id="newAcctLink" fx:id="newAcct" layoutX="33.0" layoutY="140.0" onAction="#newAcct_click" text="New Account" />
+            <Button id="logIn" fx:id="login" layoutX="251.0" layoutY="139.0" mnemonicParsing="false" onAction="#login_click" text="Log In" />
+            <Hyperlink fx:id="forgotPass" layoutX="126.0" layoutY="113.0" onAction="#forgotPass_click" text="Forgot password" />
+         </children></AnchorPane>
+  </content>
 </TitledPane>
