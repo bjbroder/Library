@@ -1,5 +1,6 @@
 package edu.yu.oop;
 
+import java.io.IOException;
 import java.sql.*;
 
 import javafx.application.Application;
@@ -25,67 +26,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         uniqueInstance = this;
         this.primaryStage = primaryStage;
-        loadSignIn();
-    }
-
-    public void loadSignIn() {
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-            primaryStage.setTitle("OOPS Library Application");
-            primaryStage.setScene(new Scene(root, 350, 225));
-            primaryStage.show();
-        }
-        catch (Exception e) {}
-
-    }
-
-    public void loadNewAcctForm(){
-        try {
-            System.out.print("trying to open new acct");
-            Parent root = FXMLLoader.load(getClass().getResource("NewAcctForm.fxml"));
-            primaryStage.setTitle("OOPS Library Application - New Account");
-            primaryStage.setScene(new Scene(root, 456, 293));
-            primaryStage.show();
-        }
-        catch (Exception e) {
-            System.out.print("couldnt open new acct");
-        }
-    }
-
-    public void loadForgotPass(){
-        try {
-
-            Parent root = FXMLLoader.load(getClass().getResource("ForgotPass.fxml"));
-            primaryStage.setTitle("OOPS Library Application - Forgot Password");
-            primaryStage.setScene(new Scene(root, 300, 215));
-            primaryStage.show();
-        }
-        catch (Exception e) {
-
-        }
-    }
-
-    public void loadRetrievePass() {
-        try {
-
-            Parent root = FXMLLoader.load(getClass().getResource("RetrievePass.fxml"));
-            primaryStage.setTitle("OOPS Library Application - Password Retrieval");
-            primaryStage.setScene(new Scene(root, 225, 300));
-            primaryStage.show();
-        }
-        catch (Exception e) {
-        }
-    }
-
-    public void loadAccountHome() {
-        try {
-
-            Parent root = FXMLLoader.load(getClass().getResource("AccountHome.fxml"));
-            primaryStage.setTitle("OOPS Library Application - Account Homepage");
-            primaryStage.setScene(new Scene(root, 600, 380));
-            primaryStage.show();
-        }
-        catch (Exception e) {}
+        loadForm(SignIn.formName,SignIn.formTitle,SignIn.formWidth,SignIn.formHeight);
     }
 
     //This code comes up a lot so I wanted to make it easily sharable
@@ -98,8 +39,19 @@ public class Main extends Application{
         alert.showAndWait();
     }
 
-
-
+    //so much repeated code when loading forms, also now each form will know what itself wants to be called/look like which makes more sense than someone else knowing
+    //I recognize that this isn't ideal because this means that the other classes need to know how to get the name,title,width,and height but I had trouble just inputting the class
+    public void loadForm(String formName, String formTitle, int formWidth, int formHeight) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource(formName));
+            primaryStage.setTitle(formTitle);
+            primaryStage.setScene(new Scene(root, formWidth, formHeight));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         try {
             Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Brielle\\Documents\\GitHub\\Library\\library.sqlite");
@@ -110,6 +62,7 @@ public class Main extends Application{
         }
         launch(args);
     }
+
 
 
 

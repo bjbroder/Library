@@ -7,6 +7,11 @@ import javafx.scene.control.Label;
 
 public class AccountHome {
 
+    public static String formName = "AccountHome.fxml";
+    public static String formTitle = "OOPS Library Application - Account Homepage";
+    public static int formWidth = 600;
+    public static int formHeight = 380;
+
     public Button browse;
     public Button myAcct;
     public Button returnItems;
@@ -31,5 +36,7 @@ public class AccountHome {
     }
 
     public void signOut_click(ActionEvent actionEvent) {
+        //curCart = 0;
+        Main.getInstance().loadForm(SignIn.formName,SignIn.formTitle,SignIn.formWidth,SignIn.formHeight);
     }
 }
