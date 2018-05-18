@@ -18,6 +18,7 @@ public class Main extends Application{
 
     static Main uniqueInstance;
     Stage primaryStage;
+    static Statement statement;
 
 
     @Override
@@ -64,34 +65,6 @@ public class Main extends Application{
         }
     }
 
-    public void loadAccountHome() {
-        try {
-
-            Parent root = FXMLLoader.load(getClass().getResource("AccountHome.fxml"));
-            primaryStage.setTitle("OOPS Library Application - Account Homepage");
-            primaryStage.setScene(new Scene(root, 600, 380));
-            primaryStage.show();
-        }
-        catch (Exception e) {}
-
-    }
-
-    //This code comes up a lot so I wanted to make it easily sharable
-    public void errorAlert (String errorMessage){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.initStyle(StageStyle.UTILITY);
-        alert.setTitle("Error");
-        alert.setHeaderText("Account Information Error");
-        alert.setContentText(errorMessage);
-
-        alert.showAndWait();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-
     public void loadRetrievePass() {
         try {
 
@@ -103,4 +76,41 @@ public class Main extends Application{
         catch (Exception e) {
         }
     }
+
+    public void loadAccountHome() {
+        try {
+
+            Parent root = FXMLLoader.load(getClass().getResource("AccountHome.fxml"));
+            primaryStage.setTitle("OOPS Library Application - Account Homepage");
+            primaryStage.setScene(new Scene(root, 600, 380));
+            primaryStage.show();
+        }
+        catch (Exception e) {}
+    }
+
+    //This code comes up a lot so I wanted to make it easily sharable
+    public void errorAlert (String errorMessage){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle("Error");
+        alert.setHeaderText("Account Information Error");
+        alert.setContentText(errorMessage);
+        alert.showAndWait();
+    }
+
+
+
+    public static void main(String[] args) {
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Brielle\\Documents\\GitHub\\Library\\library.sqlite");
+            statement = conn.createStatement();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        launch(args);
+    }
+
+
+
 }

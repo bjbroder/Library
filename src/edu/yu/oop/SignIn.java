@@ -32,8 +32,13 @@ public class SignIn {
             Main.getInstance().loadSignIn();
         }
         else {
-            //CHECK TO MAKE SURE VALUES ARE IN DB
-            Main.getInstance().loadAccountHome();
+            String findCustomer = "SELECT * FROM Customers WHERE Email=" + user + "AND Password=" + pass;
+            try {
+                ResultSet rs = Main.statement.executeQuery(findCustomer);
+                if (rs.next()) {    Main.getInstance().loadAccountHome();}
+            } catch (SQLException e) {
+                System.out.println("Error!" + e.getErrorCode());
+            }
         }
     }
 

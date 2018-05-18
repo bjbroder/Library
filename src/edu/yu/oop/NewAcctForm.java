@@ -7,6 +7,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
+import java.sql.SQLException;
+
 
 public class NewAcctForm {
 
@@ -40,7 +42,13 @@ public class NewAcctForm {
             }
 
             else {
-                //CHECK TO MAKE SURE VALUES ARE IN DB
+                String insertCustomer = "INSERT INTO Customers (First, Last, Email, Password) VALUES ("+ fName + ", "+ lName +", " + user + ", " + pass + ")";
+                System.out.print(insertCustomer);
+                try {
+                    Main.statement.executeQuery(insertCustomer);
+                } catch (SQLException e) {
+                    System.out.println("Error! " + e.getErrorCode());
+                }
                 Main.getInstance().loadAccountHome();
             }
         }
