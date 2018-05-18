@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
 
@@ -13,12 +14,31 @@ public class ForgotPass {
     public Button btnGetPass;
     public Hyperlink backToSignIn;
 
+    public TextField first;
+    public TextField last;
+    public TextField email;
+
     public void getPass(ActionEvent actionEvent){
-        //need to make sure all fields are filled in
-        //if not, give an error or just show same screen again
-        //if yes, make sure fields are in the db and match up
-        //if not, see line 18
-        //if yes, show screen with password
+
+        String f = String.valueOf(first.getText());
+        String l = String.valueOf(last.getText());
+        String e = String.valueOf(email.getText());
+
+
+        if (f.length() == 0 || l.length() == 0 || e.length() == 0) {
+            Main.getInstance().errorAlert("Need All Fields To Retrieve Password");
+            Main.getInstance().loadForgotPass();
+        }
+        else{
+            //check to make sure fields are in db
+            Main.getInstance().loadRetrievePass();
+        }
+
+
+
+
+
+
     }
 
     public void back_click(ActionEvent actionEvent){

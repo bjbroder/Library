@@ -1,11 +1,11 @@
 package edu.yu.oop;
 
+import java.sql.*;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.control.*;
 import javafx.stage.StageStyle;
+import javafx.scene.control.Alert;
 
 
 public class SignIn {
@@ -14,24 +14,31 @@ public class SignIn {
     public Hyperlink newAcct;
     public Hyperlink forgotPass;
 
+    public TextField username;
+    public PasswordField password;
+
     public void forgotPass_click(ActionEvent actionEvent) {
-        System.out.print("got here");
         Main.getInstance().loadForgotPass();
     }
 
     public void login_click(ActionEvent actionEvent) {
-        //need to make sure there is a username and password filled in
-        //if not, give an error or just show same screen again
-        //if yes, make sure the username and password are in the db
-        //if yes, go to homepage
 
-        System.out.print("got here");
-        Main.getInstance().loadAccountHome();
+        String user = String.valueOf(username.getText());
+        String pass = String.valueOf(password.getText());
+
+        int acceptableUserPass = Main.getInstance().checkUserPass(user,pass,"Username and/or Password Cannot Be Blank!");
+
+        if (acceptableUserPass == 0) {
+            Main.getInstance().loadSignIn();
+        }
+        else {
+            //CHECK TO MAKE SURE VALUES ARE IN DB
+            Main.getInstance().loadAccountHome();
+        }
     }
 
 
     public void newAcct_click(ActionEvent actionEvent) {
-        System.out.print("got here");
         Main.getInstance().loadNewAcctForm();
     }
 }
