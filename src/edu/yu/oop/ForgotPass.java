@@ -11,14 +11,14 @@ import javafx.stage.StageStyle;
 
 public class ForgotPass {
 
-    public Button btnGetPass;
+    public Button getPass;
     public Hyperlink backToSignIn;
 
     public TextField first;
     public TextField last;
     public TextField email;
 
-    public void getPass(ActionEvent actionEvent){
+    public void getPass_click(ActionEvent actionEvent){
 
         String f = String.valueOf(first.getText());
         String l = String.valueOf(last.getText());

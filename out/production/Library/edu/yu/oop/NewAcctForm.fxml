@@ -12,18 +12,18 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="456.0">
          <children>
-            <TextField id="firstName" fx:id="first" layoutX="27.0" layoutY="55.0" />
-            <TextField id="lastName" fx:id="last" layoutX="223.0" layoutY="55.0" />
-            <Label layoutX="28.0" layoutY="38.0" text="First Name:" />
-            <Label layoutX="223.0" layoutY="38.0" text="Last Name:" />
-            <Label layoutX="223.0" layoutY="100.0" text="Password:" />
-            <PasswordField id="password" fx:id="password" layoutX="223.0" layoutY="117.0" />
-            <PasswordField id="pass2" fx:id="confPass" layoutX="223.0" layoutY="177.0" />
-            <Label layoutX="223.0" layoutY="160.0" text="Confirm Password:" />
-            <Label layoutX="28.0" layoutY="100.0" prefHeight="21.0" prefWidth="186.0" text="Email Address (Username)" />
-            <TextField id="email" fx:id="email" layoutX="27.0" layoutY="117.0" />
-            <Button fx:id="submit" layoutX="103.0" layoutY="177.0" mnemonicParsing="false" onAction="#submitNewAcct_click" prefHeight="31.0" prefWidth="80.0" text="Submit" />
-            <Hyperlink id="back" fx:id="backToSignIn" layoutX="29.0" layoutY="178.0" onAction="#signIn_click" text="Back" />
+            <TextField id="firstName" fx:id="first" layoutX="12.0" layoutY="55.0" />
+            <TextField id="lastName" fx:id="last" layoutX="218.0" layoutY="55.0" />
+            <Label layoutX="13.0" layoutY="38.0" text="First Name:" />
+            <Label layoutX="218.0" layoutY="38.0" text="Last Name:" />
+            <Label layoutX="218.0" layoutY="100.0" text="Password:" />
+            <PasswordField id="password" fx:id="password" layoutX="218.0" layoutY="117.0" />
+            <PasswordField id="confPass" fx:id="confPass" layoutX="218.0" layoutY="177.0" />
+            <Label layoutX="218.0" layoutY="160.0" text="Confirm Password:" />
+            <Label layoutX="13.0" layoutY="100.0" prefHeight="21.0" prefWidth="186.0" text="Email Address (Username):" />
+            <TextField id="email" fx:id="email" layoutX="12.0" layoutY="117.0" />
+            <Button fx:id="submit" layoutX="88.0" layoutY="177.0" mnemonicParsing="false" onAction="#submitNewAcct_click" prefHeight="31.0" prefWidth="80.0" text="Submit" />
+            <Hyperlink id="back" fx:id="backToSignIn" layoutX="14.0" layoutY="178.0" onAction="#signIn_click" text="Back" />
          </children></AnchorPane>
   </content>
 </TitledPane>

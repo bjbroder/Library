@@ -17,7 +17,7 @@
             <TextField id="firstName" fx:id="first" layoutX="116.0" layoutY="10.0" />
             <TextField id="lastName" fx:id="last" layoutX="116.0" layoutY="49.0" />
             <TextField id="email" fx:id="email" layoutX="116.0" layoutY="86.0" />
-            <Button id="forgotPassButton" fx:id="btnGetPass" layoutX="147.0" layoutY="127.0" mnemonicParsing="false" text="Get Password" />
+            <Button id="forgotPassButton" fx:id="getPass" layoutX="147.0" layoutY="127.0" mnemonicParsing="false" onAction="#getPass_click" text="Get Password" />
             <Hyperlink id="back" fx:id="backToSignIn" layoutX="16.0" layoutY="128.0" onAction="#back_click" text="Back" />
          </children></AnchorPane>
   </content>

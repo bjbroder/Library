@@ -27,18 +27,18 @@ public class NewAcctForm {
         String pass = String.valueOf(password.getText());
         String pass2 = String.valueOf(confPass.getText());
 
-        if (pass != pass2) {
-            Main.getInstance().errorAlert("Confirmation Password Does Not Match Original Password");
+        if (user.length() == 0 || fName.length() == 0 || lName.length() == 0 || pass.length() == 0) {
+
+            Main.getInstance().errorAlert( "Fields Cannot Be Blank!");
             Main.getInstance().loadNewAcctForm();
         }
 
         else {
-
-            if (user.length() == 0 || fName.length() == 0 || lName.length() == 0 || pass.length() == 0) {
-
-                Main.getInstance().errorAlert( "Username And/Or Password Cannot Be Blank!");
+            if (pass.compareTo(pass2) != 0) {
+                Main.getInstance().errorAlert("Confirmation Password Does Not Match Original Password");
                 Main.getInstance().loadNewAcctForm();
             }
+
             else {
                 //CHECK TO MAKE SURE VALUES ARE IN DB
                 Main.getInstance().loadAccountHome();

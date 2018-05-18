@@ -64,8 +64,6 @@ public class Main extends Application{
         }
     }
 
-
-
     public void loadAccountHome() {
         try {
 
@@ -99,9 +97,10 @@ public class Main extends Application{
 
             Parent root = FXMLLoader.load(getClass().getResource("RetrievePass.fxml"));
             primaryStage.setTitle("OOPS Library Application - Password Retrieval");
-            primaryStage.setScene(new Scene(root, 300, 180));
+            primaryStage.setScene(new Scene(root, 225, 300));
             primaryStage.show();
         }
-        catch (Exception e) {}
+        catch (Exception e) {
+        }
     }
 }

@@ -26,9 +26,9 @@ public class SignIn {
         String user = String.valueOf(username.getText());
         String pass = String.valueOf(password.getText());
 
-        int acceptableUserPass = Main.getInstance().checkUserPass(user,pass,"Username and/or Password Cannot Be Blank!");
+        if (user.length() == 0 || pass.length() == 0) {
 
-        if (acceptableUserPass == 0) {
+            Main.getInstance().errorAlert( "Username And/Or Password Cannot Be Blank!");
             Main.getInstance().loadSignIn();
         }
         else {
